@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = git@github.com:kube-platform/kube-platform.github.io.git
+	branch = master
