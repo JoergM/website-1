@@ -11,8 +11,6 @@ toc = true
 - Installed [kustomize 2.0.1](https://github.com/kubernetes-sigs/kustomize/releases)
 - Running GKE Kubernetes Cluster with at least 3 instances of ```n1-standard-2``` worker nodes.
 
----
-
 <h4 class="section-head" id="2"><a href="#2">Configuration</a></h4>
 
 What you need to know now:
@@ -66,7 +64,7 @@ gcloud iam service-accounts keys create ./google-credentials.json \
   --project $PROJECT_ID
 
 gcloud projects add-iam-policy-binding $PROJECT_ID \
-    --member serviceAccount:${DOMAIN//./-}@$PROJECT_ID.iam.gserviceaccount.com --role roles/dns.admin 
+    --member serviceAccount:${DOMAIN//./-}@$PROJECT_ID.iam.gserviceaccount.com --role roles/dns.admin
 ```
 
 2. Ensure that the downloaded credential file `google-credentails.json` is present in the `google-overlay` folder
@@ -89,10 +87,10 @@ The configuration is made in these three files:
   - Enter the GCE project (e.g. ```PROJECT=my-google-project-223304```)
 - __cluster-issuer-patch.yaml__
   - Enter two email addresses for Let's Encrypt certificate. One for staging and one (or the same) for prod.
-- __kustomization.yaml__ 
+- __kustomization.yaml__
   - Choose ```namePrefix```, ```nameSuffix``` and ```namespace```
   - If you plan to use Let's Encrypt `prod` environment instead of `staging`, change var `CLUSTER_ISSUER_NAME` accordingly. **Note:** If you switch from `staging` to `prod`, delete already present staging certificates so that the cert-manager issues new certificates.
-  
+
 <h4 class="section-head" id="7"><a href="#7">Applying YAMLs</a></h4>
 
 1. Create a Kubernetes cluster and retrieve kubectl [credentials](https://cloud.google.com/sdk/gcloud/reference/container/clusters/get-credentials)
@@ -117,11 +115,3 @@ You should then be able to use this user to go to:
 - `https://kibana.$(DOMAIN)`
 - `https://grafana.$(DOMAIN)`
 - `https://argo.$(DOMAIN)`
-
----
-
-<h3 class="section-head" id="8"><a href="#8">CI/CD with Argo</a></h3>
-
-For running basic workflows refer to the [demos](https://github.com/argoproj/argo/blob/master/demo.md) page.
-
-For using it for CI refer to [this example](https://github.com/kube-platform/base-extras/tree/master/argo/examples/ci/CI.md).

@@ -10,8 +10,8 @@ It is for all those who want to start their next software project well integrate
 
 ## Why is KubePlatform considered production-ready?
 
-text here
+We have several years experience running workloads on Kubernetes and tested KubePlatform ourselves in the field.
 
 ## Are there plans for future components?
 
-text here
+At the moment, there are no plans for more components joining KubePlatform.
