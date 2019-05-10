@@ -16,7 +16,7 @@ toc = true
 What you need to know now:
 
 - An email address for issuing tls certificates
-- A DNS zone name (e.g. ```kubeplatform.my.domain.io```)
+- A DNS zone name (a domain or subdomain like ```kubeplatform.my.domain.io```)
 - A GCP project ID (e.g. ```my-google-project-223304```)
 
 <h4 class="section-head" id="3"><a href="#3">Own Oauth provider</a></h4>
@@ -68,15 +68,18 @@ gcloud projects add-iam-policy-binding $PROJECT_ID \
 ```
 
 2. Ensure that the downloaded credential file `google-credentails.json` is present in the `google-overlay` folder
-3. Make a note of the nameservers that were assigned to your new DNS zone (and enter them as NS entries in your providers DNS):
+3. Make a note of the nameservers that were assigned to your new DNS zone:
 
 ```bash
 gcloud dns record-sets list \
-    --zone "${DOMAIN//./-}" \
-    --name "$DOMAIN." \
-    --type NS \
-    --project $PROJECT_ID
+--zone "${DOMAIN//./-}" \
+--name "$DOMAIN." \
+--type NS \
+--project $PROJECT_ID
 ```
+
+4. Enter the new nameservers in your domain configuration of your domain providers DNS.
+
 <h4 class="section-head" id="6"><a href="#6">Overlay Configuration</a></h4>
 
 Use the provided [KubePlatform Kustomize Overlay for GKE](https://github.com/kube-platform/google-overlay).
