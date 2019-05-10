@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "KubePlatform"
 theme = "kube"
-description = "Create production ready Development Platform for Kubernetes"
+description = "A production-ready Development Platform for Kubernetes"
 Paginate = 4
 [Params]
   RSSLink = "/index.xml"
