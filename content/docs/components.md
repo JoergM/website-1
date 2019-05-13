@@ -1,6 +1,6 @@
 +++
 title = "Components"
-description = "Provided infrastructure for your cluster."
+description = "The building blocks of KubePlatform."
 draft = false
 weight = 1000
 bref="The following components are installed when leveraging KubePlatform"
