@@ -3,7 +3,7 @@ title = "Getting started"
 description = "on GKE"
 draft = false
 weight = 1000
-bref="Learn how to utilize Kubeplatform for your production-ready cluster on <mark>GKE</mark>"
+bref="Learn how to utilize KubePlatform for your production-ready cluster on <mark>GKE</mark>"
 toc = true
 +++
 <h3 class="section-head" id="1"><a href="#1">Precondition</a></h3>
@@ -17,11 +17,11 @@ What you need to know now:
 
 - An email address for issuing tls certificates
 - A DNS zone name (a domain or subdomain like ```kubeplatform.my.domain.io```)
-- A GCP project ID (e.g. ```my-google-project-223304```)
+- A GCP project ID (e.g., ```my-google-project-223304```)
 
-<h4 class="section-head" id="3"><a href="#3">Own Oauth provider</a></h4>
+<h4 class="section-head" id="3"><a href="#3">Own OAuth provider</a></h4>
 
-KubePlatform comes with pre-configured Keycloak used for user management and oauth2 authentication. If you plan to use your own OAuth provider, collect these parameters:
+KubePlatform comes with pre-configured Keycloak used for user management and oauth2 authentication. If you plan to use an own OAuth provider, collect these parameters:
 
 - An Issuer URL for OpenID Connect
 - Client ID and its client secret
@@ -97,8 +97,8 @@ The configuration is made in these three files:
 <h4 class="section-head" id="7"><a href="#7">Applying YAMLs</a></h4>
 
 1. Create a Kubernetes cluster and retrieve kubectl [credentials](https://cloud.google.com/sdk/gcloud/reference/container/clusters/get-credentials)
-2. ```kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=my@google.account.com```
-3. Create the namespace you have chosen above
+2. Create a clusterrolebinding for your account: ```kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=my@google.account.com```
+3. Create the namespace you have chosen in the overlay configuration step.
 4. Execute ```kustomize build google-overlay | kubectl apply -f -```
 
 ---

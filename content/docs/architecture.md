@@ -8,7 +8,7 @@ toc = true
 +++
 
 <h3 class="section-head" id="dns-tls"><a href="#dns-tls">DNS & TLS</a></h3>
-Ingresses configure both the <mark>cert-manager</mark> and <mark>external-dns</mark>. __external-dns__ is configured implicitly through the hostname mapping, where the __cert-manager__ requires annotations or already present certificates to watch out for.
+Ingresses configure both the <mark>cert-manager</mark> and <mark>external-dns</mark>. __external-dns__ is configured implicitly through the hostname mapping, whereas the __cert-manager__ requires annotations or already present certificates to watch out for.
 
 <div class="example">
     <img alt="dns-tls" src="/img/architecture/dns_tls.png" />
@@ -22,7 +22,7 @@ This figure shows the role of ingresses as they are configured to redirect every
 </div>
 
 <h3 class="section-head" id="logging-monitoring"><a href="#logging-monitoring">Logging & Monitoring</a></h3>
-Both <mark>elasticsearch</mark> and <mark>prometheus</mark> are deployed with Kubernetes daemons to gather data. Daemons are present on every worker node. Using the EFK Stack __fluentd__ is utilized to collect logs from workloads of a node, and to push them to __elasticsearch__. In the case of __prometheus__ all metrics are scraped from the emitting sources, collecting daemons or services. The __node-exporter__ is a daemon to collect node-specific data. The __kube-state-metric__ service collects metrics of the overall Kubernetes cluster through its API.
+Both <mark>Elasticsearch</mark> and <mark>Prometheus</mark> are deployed together with Kubernetes daemons to gather data. Daemons are present on every worker node. Using the EFK Stack __Fluentd__ is utilized to collect logs from workloads of a node, and to push them to __Elasticsearch__. In the case of __Prometheus__ all metrics are scraped from the emitting sources, collecting daemons or services. The __node-exporter__ is a daemon to collect node-specific data. The __Kube-State-Metric__ service collects metrics of the overall Kubernetes cluster through its API.
 
 <div class="example">
     <img alt="logging-monitoring" src="/img/architecture/logging_monitoring.png" />
