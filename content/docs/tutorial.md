@@ -52,7 +52,7 @@ export DOMAIN=kubeplatform.my.domain.io
 
 gcloud dns managed-zones create "${DOMAIN//./-}" \
     --dns-name "$DOMAIN." \
-    --description "Automatically managed zone by kubernetes.io/external-dns"
+    --description "Automatically managed zone by kubernetes.io/external-dns" \
     --project $PROJECT_ID
 
 gcloud iam service-accounts create ${DOMAIN//./-} \
