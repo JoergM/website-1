@@ -52,7 +52,7 @@ export DOMAIN=kubeplatform.my.domain.io
 
 gcloud dns managed-zones create "${DOMAIN//./-}" \
     --dns-name "$DOMAIN." \
-    --description "Automatically managed zone by kubernetes.io/external-dns"
+    --description "Automatically managed zone by kubernetes.io/external-dns" \
     --project $PROJECT_ID
 
 gcloud iam service-accounts create ${DOMAIN//./-} \
@@ -91,6 +91,7 @@ The configuration is made in these three files:
 - __cluster-issuer-patch.yaml__
   - Enter two email addresses for Let's Encrypt certificate. One for staging and one (or the same) for prod.
 - __kustomization.yaml__
+  - change the admin password for keycloak
   - Choose ```namePrefix```, ```nameSuffix``` and ```namespace```
   - If you plan to use Let's Encrypt `prod` environment instead of `staging`, change var `CLUSTER_ISSUER_NAME` accordingly. **Note:** If you switch from `staging` to `prod`, delete already present staging certificates so that the cert-manager issues new certificates.
 
