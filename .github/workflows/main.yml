@@ -17,4 +17,4 @@ jobs:
         env:
           HUGO_VERSION: 0.57.2
           TARGET_REPO: kube-platform/kube-platform.github.io
-          TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          TOKEN: ${{ secrets.DEPLOY_TOKEN }}
