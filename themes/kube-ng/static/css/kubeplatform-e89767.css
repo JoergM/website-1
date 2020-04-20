@@ -114,6 +114,13 @@ strong, b {
   font-weight: bold;
 }
 
+img {
+  display: block;
+  margin-top: 80px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .hero {
   display: -webkit-box;
   display: -webkit-flex;
@@ -348,6 +355,11 @@ strong, b {
   background-color: #f8f8fa;
 }
 
+.content-components {
+  margin-top: 120px;
+  margin-bottom: 160px;
+}
+
 .subheader-heading {
   margin-top: 0px;
   margin-bottom: 28px;
@@ -361,6 +373,7 @@ strong, b {
 .content-main {
   margin-top: 120px;
   margin-bottom: 160px;
+  min-height: 400px;
 }
 
 .grid-components {
@@ -396,6 +409,7 @@ strong, b {
 
 .footer-logo {
   margin-bottom: 20px;
+  display: inline-block;
 }
 
 .architecture-block {
@@ -489,6 +503,11 @@ strong, b {
 .components_logo {
   height: 50px;
   margin-right: 24px;
+  display: inline-block;
+}
+
+div.components_logo  {
+  margin-top: 80px;
 }
 
 code {

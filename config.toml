@@ -20,7 +20,7 @@ pygmentsUseClasses = true
 [[menu.main]]
     name = "Components"
     weight = 200
-    url = "/docs/components/"
+    url = "/components/"
 [[menu.main]]
     name = "Architecture"
     weight = 300
