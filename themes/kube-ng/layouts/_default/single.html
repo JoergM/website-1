@@ -1,32 +1,23 @@
 {{ define "title"}} {{ .Title}} {{end}}
 {{ define "header"}} {{ partial "header" .}} {{end}}
-
-{{ define "main" }}
-<header class="hero">
-  <div class="container-hero w-container">
-    <div class="hero-visual-container">
-      <div class="hero-main-content">
-        <h1 class="hero-heading">{{.Title }}</h1>
-        <h3 class="heading-4"><strong class="hero-subheading">{{.Params.description}}</strong></h3>
-      </div><img src="images/KP_Visual.svg" alt="Kube Platform Visual" class="kb_visual"></div>
-    <div class="hero-cta-container">
-      <div class="hero-ctas">
-        <div class="ctas">
-          <div class="ctas-download-container"><a href="https://github.com/kube-platform/base/releases" class="button-primary w-button">Download ZIP Archive</a>
-            <div class="hero-download-info">Includes the base files to use with kustomize</div>
-          </div><a href="https://github.com/kube-platform" class="button-secondary w-button">Get it on Github</a></div>
-        <div class="license-text">
-          <p class="text-emp">KubePlatform is licensed under the Apache License, Version 2.0. It is free for personal and commercial use.</p>
-        </div>
-      </div>
+{{ define "main"}}
+  <div class="subheader">
+    <div class="subheader-container w-container">
+      <h1 class="subheader-heading">{{ .Title}} </h1>
+      <p class="text-emp"><em>{{ .Params.bref | safeHTML }}.</em></p>
     </div>
   </div>
-</header>
-
-<ul id="posts">
- {{ .Content }}
-</ul>
-{{ end }} 
-{{ define "footer" }} 
-  {{ partial "footer" . }} 
+  <div id="main" class="content-main">
+    <div class="container-content-20px w-container">
+    {{ partial "toc" .}}
+    {{ .Content}}
+<!-- Inject script tag in this template  -->
+    {{if .Params.script}}
+     {{ $script := (delimit (slice "scripts" .Params.script) "/")}}
+    {{ partial (string $script) .}}
+    {{end }}
+    </div>
+  </div>
 {{ end }}
+
+{{ define "footer"}} {{ partial "footer" .}} {{end}}

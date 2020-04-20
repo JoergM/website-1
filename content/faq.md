@@ -1,7 +1,7 @@
 +++
 draft= false
 title = "FAQ"
-description = "Asked and answered"
+bref = "Asked and answered"
 +++
 
 ## KubePlatform looks awesome. Who is it for?

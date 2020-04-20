@@ -9,13 +9,13 @@ toc = true
 
 ### DNS & TLS
 
-Ingresses configure both the `cert-manager` and `external-dns`. `external-dns` is configured implicitly through the hostname mapping, whereas the __cert-manager__ requires annotations or already present certificates to watch out for.
+Ingresses configure both the __cert-manager__ and __external-dns__. __external-dns__ is configured implicitly through the hostname mapping, whereas the __cert-manager__ requires annotations or already present certificates to watch out for.
 
 ![dns_tls](/img/architecture/dns_tls.svg)
 
 ### OAuth2
 
-This figure shows the role of ingresses as they are configured to redirect every request to the `oauth2-proxy`. The `nginx-ingress` controller does not have a particular role, apart from the fact, that it is configured by routing rules in the shape of ingress resources. The most part of the OAuth2 process is done by browser redirects. `Keycloak` acts here as the identity provider, but also other IAM services can be used with the __oauth2-proxy__.
+This figure shows the role of ingresses as they are configured to redirect every request to the __oauth2-proxy__. The __nginx-ingress__ controller does not have a particular role, apart from the fact, that it is configured by routing rules in the shape of ingress resources. The most part of the OAuth2 process is done by browser redirects. `Keycloak` acts here as the identity provider, but also other IAM services can be used with the __oauth2-proxy__.
 
 ![oauth](/img/architecture/oauth.svg)
 

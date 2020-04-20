@@ -1,48 +1,67 @@
 {{ define "title"}} {{ .Site.Title}} {{end}}
 {{ define "header"}} {{ partial "header" .}} {{end}}
 {{ define "main"}}
-
-<div id="main">
-  <header class="hero">
-    <div class="container-hero w-container">
-      <div class="hero-visual-container">
-        <div class="hero-main-content">
-          <h1 class="hero-heading">KubePlatform</h1>
-          <h3 class="heading-4"><strong class="hero-subheading">A production-ready Development Platform for Kubernetes</strong></h3>
-        </div><img src="images/KP_Visual.svg" alt="Kube Platform Visual" class="kb_visual"></div>
-      <div class="hero-cta-container">
-        <div class="hero-ctas">
-          <div class="ctas">
-            <div class="ctas-download-container">
-              <a href="https://github.com/kube-platform/base/releases" class="button-primary w-button" target="_blank" onclick="_gaq.push(['_trackEvent', 'kube', 'download']);">Download ZIP Archive</a>
-              <div class="hero-download-info">Includes the base files to use with kustomize</div>
-            </div>
-            <a href="{{.Site.Params.githubOrgPage}}" target="_blank" onclick="_gaq.push(['_trackEvent', 'kube', 'github']);" class="button-secondary w-button">View on Github</a>
-          </div>
-          <div class="license-text">
-            <p class="text-emp">KubePlatform is licensed under the Apache License, Version 2.0. It is free for personal and commercial use.</p>
-          </div>
+<header class="hero">
+  <div class="container-hero w-container">
+    <div class="hero-visual-container">
+      <div class="hero-main-content">
+        <h1 class="hero-heading">KubePlatform</h1>
+        <h3 class="heading-4"><strong class="hero-subheading">A production-ready Development Platform for Kubernetes</strong></h3>
+      </div><img src="images/KP_Visual.svg" alt="Kube Platform Visual" class="kb_visual"></div>
+    <div class="hero-cta-container">
+      <div class="hero-ctas">
+        <div class="ctas">
+          <div class="ctas-download-container"><a href="https://github.com/kube-platform/base/releases" class="button-primary w-button">Download ZIP Archive</a>
+            <div class="hero-download-info">Includes the base files to use with kustomize</div>
+          </div><a href="https://github.com/kube-platform" class="button-secondary w-button">Get it on Github</a></div>
+        <div class="license-text">
+          <p class="text-emp">KubePlatform is licensed under the Apache License, Version 2.0. It is free for personal and commercial use.</p>
         </div>
       </div>
     </div>
-  </header>
-  <div id="kube-features">
-    <div class="row gutters">
-      <div class="col col-4 item">
-        <h4>Ready to use</h4>
-        <p>KubePlatform is ready to be installed on <mark>GKE</mark>.</p>
+  </div>
+</header>
+<div class="benefits">
+  <div class="container w-container">
+    <div class="w-row">
+      <div class="benefit-column-first w-col w-col-6">
+        <div class="benefit-container">
+          <div class="benefit-element"><img src="images/Customizable.svg" alt="Customized Kube Platform Visual" class="benefit-image-customizable"></div>
+          <h2 class="benefit-heading">Customizable</h2>
+          <p class="text-emp text-center"><em class="text-emp">Create an own overlay with our kustomize base.</em></p>
+        </div>
       </div>
-      <div class="col col-4 item">
-        <h4>Customizable</h4>
-        <p>Create an own overlay with our <mark>kustomize</mark> base.</p>
+      <div class="benefit-column-last w-col w-col-6">
+        <div class="benefit-container">
+          <div class="benefit-element"><img src="images/ReadyToUse.svg" alt="Box" class="benefit-image-ready"></div>
+          <h2 class="benefit-heading">Ready To Use</h2>
+          <p class="text-emp text-center"><em class="text-emp">KubePlatform is ready to be installed on GKE.</em></p>
+        </div>
       </div>
-      <div class="col col-4 item">
-        <h4>License</h4>
-        <p>KubePlatform is licensed under the <mark><a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></mark>.<br>
-      it is free for personal and commercial use.</p>
     </div>
   </div>
 </div>
+<div class="faq">
+  <div class="w-container">
+    <div class="w-layout-grid grid-faq">
+      <div class="faq-block">
+        <h4><strong>KubePlatform looks awesome. <br>Who is it for?</strong></h4>
+        <p>It is for all those who want to start their next software project well integrated with monitoring, tls and oAuth.</p>
+      </div>
+      <div class="faq-block">
+        <h4><strong>Why is KubePlatform considered production-ready?</strong></h4>
+        <p>We have several years experience running workloads on Kubernetes and tested KubePlatform ourselves in the field.</p>
+      </div>
+      <div class="faq-block">
+        <h4><strong>How is KubePlatform different from Kubernetes Production Runtime (BKPR) by Bitnami?</strong></h4>
+        <p>BKPR uses a CLI and Jsonnet files for installing its components, whereas KubePlatform provides a kustomize base and an overlay for GKE. Also, the set of components is slightly different.</p>
+      </div>
+      <div class="faq-block">
+        <h4><strong>Are there plans for future components?</strong></h4>
+        <p>At the moment, there are no plans for more components joining KubePlatform.</p>
+      </div>
+    </div>
+  </div>
 </div>
 {{ end }}
 {{ define "footer"}} {{ partial "footer" .}} {{end}}

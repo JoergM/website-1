@@ -24,8 +24,13 @@ pygmentsUseClasses = true
 [[menu.main]]
     name = "Architecture"
     weight = 300
-    url = "/docs/architecture/"
+    url = "/architecture/"
 [[menu.main]]
     name = "Getting started"
     weight = 400
-    url = "/docs/tutorial/"
+    url = "/getting-started/"
+[[menu.main]]
+    name = "FaQ"
+    weight = 500
+    url = "/faq/"
+

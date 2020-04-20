@@ -31,7 +31,7 @@ h2 {
 }
 
 h3 {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 10px;
   font-family: 'Fontfont mark pro', sans-serif;
   color: #2e343b;
@@ -116,7 +116,6 @@ strong, b {
 
 img {
   display: block;
-  margin-top: 80px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -412,36 +411,6 @@ img {
   display: inline-block;
 }
 
-.architecture-block {
-  margin-bottom: 200px;
-}
-
-.content-architecture {
-  margin-bottom: 0px;
-  padding-top: 120px;
-}
-
-.content-getting-started {
-  margin-top: 120px;
-  margin-bottom: 200px;
-}
-
-.precondition {
-  margin-bottom: 120px;
-}
-
-.installation {
-  margin-bottom: 0px;
-}
-
-.precondition-heading {
-  margin-bottom: 60px;
-}
-
-.installation-heading {
-  margin-bottom: 60px;
-}
-
 .grid-faq {
   margin-top: 0px;
   padding: 120px 0px;
@@ -456,11 +425,12 @@ img {
   margin: 50px 100px;
 }
 
-.architecture-graphic {
-  display: block;
+.container-content-20px img {
   margin-top: 80px;
-  margin-right: auto;
-  margin-left: auto;
+}
+
+.container-content-20px p img {
+  margin-bottom: 200px;
 }
 
 .kb_visual {
@@ -504,10 +474,6 @@ img {
   height: 50px;
   margin-right: 24px;
   display: inline-block;
-}
-
-div.components_logo  {
-  margin-top: 80px;
 }
 
 code {
