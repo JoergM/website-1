@@ -1,0 +1,48 @@
+{{ define "title"}} {{ .Site.Title}} {{end}}
+{{ define "header"}} {{ partial "header" .}} {{end}}
+{{ define "main"}}
+
+<div id="main">
+  <header class="hero">
+    <div class="container-hero w-container">
+      <div class="hero-visual-container">
+        <div class="hero-main-content">
+          <h1 class="hero-heading">KubePlatform</h1>
+          <h3 class="heading-4"><strong class="hero-subheading">A production-ready Development Platform for Kubernetes</strong></h3>
+        </div><img src="images/KP_Visual.svg" alt="Kube Platform Visual" class="kb_visual"></div>
+      <div class="hero-cta-container">
+        <div class="hero-ctas">
+          <div class="ctas">
+            <div class="ctas-download-container">
+              <a href="https://github.com/kube-platform/base/releases" class="button-primary w-button" target="_blank" onclick="_gaq.push(['_trackEvent', 'kube', 'download']);">Download ZIP Archive</a>
+              <div class="hero-download-info">Includes the base files to use with kustomize</div>
+            </div>
+            <a href="{{.Site.Params.githubOrgPage}}" target="_blank" onclick="_gaq.push(['_trackEvent', 'kube', 'github']);" class="button-secondary w-button">View on Github</a>
+          </div>
+          <div class="license-text">
+            <p class="text-emp">KubePlatform is licensed under the Apache License, Version 2.0. It is free for personal and commercial use.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="kube-features">
+    <div class="row gutters">
+      <div class="col col-4 item">
+        <h4>Ready to use</h4>
+        <p>KubePlatform is ready to be installed on <mark>GKE</mark>.</p>
+      </div>
+      <div class="col col-4 item">
+        <h4>Customizable</h4>
+        <p>Create an own overlay with our <mark>kustomize</mark> base.</p>
+      </div>
+      <div class="col col-4 item">
+        <h4>License</h4>
+        <p>KubePlatform is licensed under the <mark><a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></mark>.<br>
+      it is free for personal and commercial use.</p>
+    </div>
+  </div>
+</div>
+</div>
+{{ end }}
+{{ define "footer"}} {{ partial "footer" .}} {{end}}

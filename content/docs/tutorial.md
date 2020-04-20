@@ -3,15 +3,16 @@ title = "Getting started"
 description = "on GKE"
 draft = false
 weight = 1000
-bref="Learn how to utilize KubePlatform for your production-ready cluster on <mark>GKE</mark>"
+bref="Learn how to utilize KubePlatform for your production-ready cluster on GKE"
 toc = true
 +++
-<h3 class="section-head" id="1"><a href="#1">Precondition</a></h3>
+
+## Precondition
 
 - Installed [kustomize 2.0.1](https://github.com/kubernetes-sigs/kustomize/releases)
 - Running GKE Kubernetes Cluster with at least 3 instances of ```n1-standard-2``` worker nodes.
 
-<h4 class="section-head" id="2"><a href="#2">Configuration</a></h4>
+### Configuration
 
 What you need to know now:
 
@@ -19,7 +20,7 @@ What you need to know now:
 - A DNS zone name (a domain or subdomain like ```kubeplatform.my.domain.io```)
 - A GCP project ID (e.g., ```my-google-project-223304```)
 
-<h4 class="section-head" id="3"><a href="#3">Own OAuth provider</a></h4>
+### Own OAuth provider
 
 KubePlatform comes with pre-configured Keycloak used for user management and oauth2 authentication. If you plan to use an own OAuth provider, collect these parameters:
 
@@ -34,7 +35,7 @@ Add these parameters to:
 
 ---
 
-<h3 class="section-head" id="4"><a href="#4">Installation</a></h3>
+## Installation
 
 The installation consists basically of these parts
 
@@ -42,7 +43,7 @@ The installation consists basically of these parts
 2. Overlay Configuration
 3. Applying yamls to Kubernetes
 
-<h4 class="section-head" id="5"><a href="#5">DNS configuration</a></h4>
+### DNS configuration
 
 1. Create a new DNS Zone and a ServiceAccount to be used by ```external-dns``` to add hosts to:
 
@@ -80,31 +81,34 @@ gcloud dns record-sets list \
 
 4. Enter the new nameservers in your domain configuration of your domain providers DNS.
 
-<h4 class="section-head" id="6"><a href="#6">Overlay Configuration</a></h4>
+### Overlay Configuration
 
 Use the provided [KubePlatform Kustomize Overlay for GKE](https://github.com/kube-platform/google-overlay).
 The configuration is made in these three files:
 
-- __kubeplatform.properties__
+__kubeplatform.properties__
+
   - Enter the desired domain (e.g. ```DOMAIN=kubeplatform.my.domain.io```)
   - Enter the GCE project (e.g. ```PROJECT=my-google-project-223304```)
-- __cluster-issuer-patch.yaml__
+
+__cluster-issuer-patch.yaml__
+
   - Enter two email addresses for Let's Encrypt certificate. One for staging and one (or the same) for prod.
-- __kustomization.yaml__
+
+__kustomization.yaml__
+
   - change the admin password for keycloak
   - Choose ```namePrefix```, ```nameSuffix``` and ```namespace```
   - If you plan to use Let's Encrypt `prod` environment instead of `staging`, change var `CLUSTER_ISSUER_NAME` accordingly. **Note:** If you switch from `staging` to `prod`, delete already present staging certificates so that the cert-manager issues new certificates.
 
-<h4 class="section-head" id="7"><a href="#7">Applying YAMLs</a></h4>
+### Applying YAMLs
 
 1. Create a Kubernetes cluster and retrieve kubectl [credentials](https://cloud.google.com/sdk/gcloud/reference/container/clusters/get-credentials)
 2. Create a clusterrolebinding for your account: ```kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=my@google.account.com```
 3. Create the namespace you have chosen in the overlay configuration step.
 4. Execute ```kustomize build google-overlay | kubectl apply -f -```
 
----
-
-<h3 class="section-head" id="8"><a href="#8">Finalize</a></h3>
+## Finalize
 
 Wait until your Pods are running
 
