@@ -1,39 +1,11 @@
 +++
 title = "Getting started"
-description = "on GKE"
+description = "Installation on GKE"
 draft = false
-weight = 1000
+weight = 32
 bref="Learn how to utilize KubePlatform for your production-ready cluster on GKE"
 toc = true
 +++
-
-## Precondition
-
-- Installed [kustomize 2.0.1](https://github.com/kubernetes-sigs/kustomize/releases)
-- Running GKE Kubernetes Cluster with at least 3 instances of ```n1-standard-2``` worker nodes.
-
-### Configuration
-
-What you need to know now:
-
-- An email address for issuing tls certificates
-- A DNS zone name (a domain or subdomain like ```kubeplatform.my.domain.io```)
-- A GCP project ID (e.g., ```my-google-project-223304```)
-
-### Own OAuth provider
-
-KubePlatform comes with pre-configured Keycloak used for user management and oauth2 authentication. If you plan to use an own OAuth provider, collect these parameters:
-
-- An Issuer URL for OpenID Connect
-- Client ID and its client secret
-- Cookie Secret
-
-Add these parameters to:
-
-- oauth2-proxy.properties
-- patches/oauth2-proxy-patch.yaml
-
----
 
 ## Installation
 
@@ -107,19 +79,3 @@ __kustomization.yaml__
 2. Create a clusterrolebinding for your account: ```kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=my@google.account.com```
 3. Create the namespace you have chosen in the overlay configuration step.
 4. Execute ```kustomize build google-overlay | kubectl apply -f -```
-
-## Finalize
-
-Wait until your Pods are running
-
-Setup a user in Keycloak:
-
-1. A call to `https://keycloak.$(DOMAIN)/auth/admin/` should point you to your Keycloak instance (username is ```keycloak```, for the password refer to your kustomization.yaml)
-2. Add a user of your choice in Manage/Users (must have an email address). Please refer to the respective [Keycloak documentation](https://www.keycloak.org/documentation)
-
-You should then be able to use this user to go to:
-
-- `https://prometheus.$(DOMAIN)`
-- `https://kibana.$(DOMAIN)`
-- `https://grafana.$(DOMAIN)`
-- `https://argo.$(DOMAIN)`

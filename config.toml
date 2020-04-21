@@ -29,8 +29,3 @@ pygmentsUseClasses = true
     name = "Getting started"
     weight = 400
     url = "/getting-started/"
-[[menu.main]]
-    name = "FaQ"
-    weight = 500
-    url = "/faq/"
-

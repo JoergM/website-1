@@ -25,8 +25,8 @@ h2 {
   margin-bottom: 10px;
   font-family: 'Fontfont mark pro', sans-serif;
   color: #2e343b;
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
   font-weight: 900;
 }
 
@@ -35,9 +35,13 @@ h3 {
   margin-bottom: 10px;
   font-family: 'Fontfont mark pro', sans-serif;
   color: #2e343b;
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
   font-weight: 700;
+}
+
+.getting-started h3 {
+  margin-top: 60px;
 }
 
 h4 {
@@ -73,7 +77,7 @@ a {
   padding-right: 0px;
   padding-bottom: 0px;
   padding-left: 0px;
-  border: 0px solid #000;
+  border: 0px solid #2e343b;
   background-color: transparent;
   font-family: 'Fontfont mark pro book', sans-serif;
   color: #6351fe;
@@ -110,7 +114,7 @@ li {
 }
 
 strong, b {
-  color: #000;
+  color: #2e343b;
   font-weight: bold;
 }
 
@@ -314,6 +318,7 @@ img {
 
 .hero-subheading {
   font-family: 'Fontfont mark pro', sans-serif;
+  font-size: 2rem;
   line-height: 2.4rem;
   font-weight: 900;
 }
@@ -373,6 +378,10 @@ img {
   margin-top: 120px;
   margin-bottom: 160px;
   min-height: 400px;
+}
+
+.content-section {
+  margin-bottom: 120px;
 }
 
 .grid-components {

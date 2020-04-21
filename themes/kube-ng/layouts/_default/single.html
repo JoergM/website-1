@@ -8,7 +8,7 @@
     </div>
   </div>
   <div id="main" class="content-main">
-    <div class="container-content-20px w-container">
+    <div class="container-content-20px w-container {{ .File.ContentBaseName }}">
     {{ partial "toc" .}}
     {{ .Content}}
 <!-- Inject script tag in this template  -->

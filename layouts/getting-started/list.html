@@ -1,0 +1,22 @@
+{{ define "title"}} {{ .Title}} {{end}}
+{{ define "header"}} {{ partial "header" .}} {{end}}
+{{ define "main"}}
+
+<div class="subheader">
+  <div class="subheader-container w-container">
+    <h1 class="subheader-heading">Getting started</h1>
+    <p class="text-emp"><em>The following components are installed when leveraging KubePlatform.</em></p>
+  </div>
+</div>
+<div class="content-components getting-started">
+  <div class="w-container">
+    {{ range (.Paginator 10).Pages.ByWeight }} 
+    <div class="content-section">
+      {{ .Content }} 
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+{{ define "footer"}} {{ partial "footer" .}} {{end}}
