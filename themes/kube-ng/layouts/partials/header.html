@@ -1,0 +1,14 @@
+<div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
+  <div class="navbar-container w-container">
+    <nav role="navigation" class="nav-menu w-nav-menu">
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+      <div class="nav-link-div"><a href="{{ .URL }}" {{if  $currentPage.IsMenuCurrent "main" . }} aria-current="page" class="nav-link w-nav-link w--current" {{else}} class="nav-link w-nav-link" {{end}}>{{ .Name }}</a></div>
+      {{end}}
+    </nav>
+    <div class="div-block"><a href="https://github.com/kube-platform/base/releases" class="nav-button-download w-button">Download</a><a href="https://github.com/kube-platform" class="nav-button-view w-button">Get it on Github</a></div>
+    <div class="menu-button w-nav-button">
+      <div class="icon w-icon-nav-menu"></div>
+    </div>
+  </div>
+</div>

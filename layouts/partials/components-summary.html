@@ -1,0 +1,4 @@
+<div class="component-div">
+{{ range (split $.Page.Params.logos ",") }} {{ if . }}<img src="/img/components/{{.}}.png" alt="{{.}}" title="{{.}}" class="components_logo">{{else}}<div class="components_logo"></div>{{end}}{{end}}
+{{ .Content | safeHTML }}
+</div>

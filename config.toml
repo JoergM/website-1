@@ -1,9 +1,11 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "KubePlatform"
-theme = "kube"
+theme = "kube-ng"
 description = "A production-ready Development Platform for Kubernetes"
 Paginate = 4
+pygmentsUseClasses = true
+
 [Params]
   RSSLink = "/index.xml"
   author = "KubePlatform"
@@ -12,14 +14,18 @@ Paginate = 4
   email = "myemail@myaddress.xxx"
 
 [[menu.main]]
-    name = "Docs"
-    weight = -100
-    url = "/docs/"
+    name = "Home"
+    weight = 100
+    url = "/"
 [[menu.main]]
-    name = "Blog"
-    weight = -100
-    url = "/blog/"
+    name = "Components"
+    weight = 200
+    url = "/components/"
 [[menu.main]]
-    name = "FAQ"
-    weight = -100
-    url = "/faq/"
+    name = "Architecture"
+    weight = 300
+    url = "/architecture/"
+[[menu.main]]
+    name = "Getting started"
+    weight = 400
+    url = "/getting-started/"
